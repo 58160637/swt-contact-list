@@ -41,7 +41,8 @@ describe('GET/contacts:id',()=>{
       expect(contact.notes).toBeDefined()
       done()
     })
-
+  })
+})
 describe('POST /contacts',()=>{
   it('Should return 201',(done)=>{
     request(app).post('/contacts')
