@@ -59,7 +59,7 @@ describe('POST /contacts',()=>{
 
 describe('PUT /contacts/:id',()=>{
   it('Should return 200',(done)=>{
-    request(app).put('/contacts/:11')
+    request(app).put('/contacts/11')
       .send({name : 'Waramporn Yangkijkarn',email : "58160637@go.buu.ac.th", phone : "123-456-7890",url :"www.github.com/5816063",notes:"final make me wanna die"})
       .set('Accept','application/json')
       .expect(200)
@@ -75,7 +75,7 @@ describe('PUT /contacts/:id',()=>{
 
 describe('DELETE /contacts/:id',()=>{
   it('Should return 204',(done)=>{
-    request(app).delete('/contacts/:11')
+    request(app).delete('/contacts/11')
       .set('Accept','application/json')
       .expect(204)
       .then((res)=>{
