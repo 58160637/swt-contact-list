@@ -25,3 +25,21 @@ describe('GET/contacts',()=>{
     })
   })
 })
+
+describe('GET/contacts:id',()=>{
+  it('Should return 200 OK with Id',(done)=>{
+    request(app).get('/contacts/0')
+    .set('Accept','applications/json')
+    .expect(200)
+    .then((res)=>{
+      let contact = res.body
+      expect(contact.id).toBe(0)
+      expect(contact.name).toBeDefined()
+      expect(contact.email).toBeDefined()
+      expect(contact.phone).toBeDefined()
+      expect(contact.url).toBeDefined()
+      expect(contact.notes).toBeDefined()
+      done()
+    })
+  })
+})
